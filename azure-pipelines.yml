@@ -15,6 +15,8 @@ jobs:
   - pwsh: |
       dir "C:\Program Files (x86)" 
       dir "C:\Program Files (x86)\Microsoft Visual Studio"
+      dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
+      dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\BuildTools"
       curl --create-dirs -sSLo $HOME\.sonar\build-wrapper-win-x86.zip ${{variables.BUILD_WRAPPER_DOWNLOAD_URL}}
       unzip -o $HOME\.sonar\build-wrapper-win-x86.zip -d $HOME\.sonar\
     displayName: Download and install build wrapper
