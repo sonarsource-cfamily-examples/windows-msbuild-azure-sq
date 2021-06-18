@@ -17,7 +17,7 @@ jobs:
       unzip -o $HOME\.sonar\build-wrapper-win-x86.zip -d $HOME\.sonar\
     displayName: Download and install build wrapper
   - pwsh: |
-      & "$HOME\.sonar\build-wrapper-win-x86\build-wrapper-win-x86-64.exe" --out-dir build_wrapper_output_directory msbuild sonar_scanner_example.vcxproj
+      & "$HOME\.sonar\build-wrapper-win-x86\build-wrapper-win-x86-64.exe" --out-dir build_wrapper_output_directory MSBuild.exe sonar_scanner_example.vcxproj
     workingDirectory: .
     displayName: Build in build-wrapper
   - task: SonarCloudAnalyze@1
