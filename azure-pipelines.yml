@@ -13,16 +13,12 @@ jobs:
       scannerMode: 'CLI'
       configMode: 'file'
   - pwsh: |
-      dir "C:\Program Files (x86)" 
-      dir "C:\Program Files (x86)\Microsoft Visual Studio"
-      dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
-      dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\BuildTools"
-      echo $PATH
       curl --create-dirs -sSLo $HOME\.sonar\build-wrapper-win-x86.zip ${{variables.BUILD_WRAPPER_DOWNLOAD_URL}}
       unzip -o $HOME\.sonar\build-wrapper-win-x86.zip -d $HOME\.sonar\
     displayName: Download and install build wrapper
   - pwsh: |
-      & "$HOME\.sonar\build-wrapper-win-x86\build-wrapper-win-x86-64.exe" --out-dir build_wrapper_output_directory MSBuild.exe sonar_scanner_example.vcxproj
+      $path = vswhere -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe | select-object -first 1
+      & "$HOME\.sonar\build-wrapper-win-x86\build-wrapper-win-x86-64.exe" --out-dir build_wrapper_output_directory $path sonar_scanner_example.vcxproj /t:rebuild
     workingDirectory: .
     displayName: Build in build-wrapper
   - task: SonarCloudAnalyze@1
