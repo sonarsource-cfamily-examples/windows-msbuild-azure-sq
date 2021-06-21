@@ -30,7 +30,7 @@ It is very easy to analyze a C/C++/Objective-C project with SonarCloud https://s
 * Choose your `organization`
 * Choose "Use standalone scanner" (`scannerMode: 'CLI'`)
 * Choose "Store configuration with my source code (sonar-project.properties)" (`configMode: 'file'`)
-.. Add a task to download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
+.. Add a task to download the https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-steps-using-build-wrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
 .. Add the `SonarCloudAnalyze` task
 
@@ -38,7 +38,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 = Documentation
 
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+- https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
 - https://sonarcloud.io/documentation/getting-started/azure-devops/[Documentation of using SonarCloud with Azure DevOps]
 
 = Windows\MSBuild
