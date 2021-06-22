@@ -9,7 +9,7 @@ jobs:
   # Make Build Wrapper available
   - task: SonarQubePrepare@4
     inputs:
-      SonarQube: 'azure-sq' # Name of the SonarQube service endpoint you created
+      SonarQube: 'SonarQube' # Name of the SonarQube service endpoint you created
       scannerMode: 'CLI'
       configMode: 'file'
       extraProperties: "sonar.cfamily.build-wrapper-output=build_wrapper_output_directory"
