@@ -1,45 +1,36 @@
-= C++ example project scanned on SonarCloud using Azure Pipelines
-// URIs:
-:uri-qg-status: https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_windows-msbuild-azure-sc
-:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sc-sq-c-family-examples_windows-msbuild-azure-sc&metric=alert_status
-:uri-build-status: https://dev.azure.com/sc-sq-c-family-examples/windows-msbuild-azure-sc/_build/latest?definitionId=2
-:img-build-status: https://dev.azure.com/sc-sq-c-family-examples/windows-msbuild-azure-sc/_apis/build/status/sc-sq-c-family-examples.windows-msbuild-azure-sc
+= C++ example project scanned on SonarQube using Azure Pipelines
 
-image:{img-build-status}[Build Status, link={uri-build-status}]
-image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
-
-*This project is analysed on https://sonarcloud.io/dashboard?id=sc-sq-c-family-examples_windows-msbuild-azure-sc[SonarCloud]!*
-
-It is very easy to analyze a C/C++/Objective-C project with SonarCloud https://sonarcloud.io/documentation/getting-started/azure-devops/[on Azure DevOps]:
+It is very easy to analyze a C/C++/Objective-C project with SonarQube on Azure DevOps:
 
 . Create a `sonar-project.properties` file to store your configuration
-. Install SonarCloud extension for your organization:
+. Install SonarQube extension for your organization:
 .. Open Organization settings (in the bottom left corner of organization view)
 .. Open "Extensions" page (in the General category)
-.. Press "Browse marketplace" and find "SonarCloud"
+.. Press "Browse marketplace" and find "SonarQube"
 .. Select your organization and click "Install"
-. Add the SonarCloud connection to your project:
+. Add the SonarQube connection to your project:
 .. Open Project settings (in the bottom left corner)
 .. Open "Service connections" page (in the Pipelines category)
-.. Press "New connection" and select the "SonarCloud"
-.. Fill in the `SONAR_TOKEN`
-.. Name your connection `SonarCloud` (to reference it later in `azure-pipelines.yml`)
+.. Press "New connection" and select "SonarQube""
+.. Fill in the server URL (e.g.: https://example.com:9000) and the authentication token
+.. Name your connection `SonarQube` (to reference it later in `azure-pipelines.yml`)
 . In your `azure-pipelines.yml` file:
-.. Add the `SonarCloudPrepare` task and configure it:
-* Specify the `SonarCloud Service Endpoint` as `SonarCloud` - the connection you created earlier
-* Choose your `organization`
+.. Add the `SonarQubePrepare` task and configure it:
+* Specify the `SonarQube Service Endpoint` as `SonarQube` - the connection you created earlier
 * Choose "Use standalone scanner" (`scannerMode: 'CLI'`)
-* Choose "Store configuration with my source code (sonar-project.properties)" (`configMode: 'file'`)
-.. Add a task to download the https://sonarcloud.io/documentation/analysis/languages/cfamily/#analysis-steps-using-build-wrapper[Build Wrapper]
+* Choose "Manually provide configuration"
+* Specify the "Project Key" and the "Sources directory root"
+* In "Additional Properties" in the "Advanced" section, add the property `sonar.cfamily.build-wrapper-output` with, as its value, the output directory to which the Build Wrapper should write its results (e.g. `build_wrapper_output_directory`)
+.. Add a task to download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-4[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
-.. Add the `SonarCloudAnalyze` task
+.. Add the `SonarQubeAnalyze` task
 
-You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:azure-pipelines.yml[azure-pipelines.yml] to see it in practice.
+You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:azure-pipelines.yml[azure-pipelines.yml] to see it in practice. Please be aware that the SonarQube server URL is not completed in this azure-pipelines.yml example.
 
 = Documentation
 
-- https://sonarcloud.io/documentation/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
-- https://sonarcloud.io/documentation/getting-started/azure-devops/[Documentation of using SonarCloud with Azure DevOps]
+- https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C/C++/Objective-C plugin and its Build Wrapper]
+- https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
 
 = Windows\MSBuild
 
