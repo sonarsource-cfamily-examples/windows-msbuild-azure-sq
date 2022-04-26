@@ -4,7 +4,7 @@
 :uri-qg-status: https://next.sonarqube.com/sonarqube/dashboard?id=sonarsource-cfamily-examples_windows-msbuild-azure-sq_AYAYtpeIQUWaRZD6h1vH
 :img-qg-status: https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=sonarsource-cfamily-examples_windows-msbuild-azure-sq_AYAYtpeIQUWaRZD6h1vH&metric=alert_status&token=squ_a0683d6d23bc3fa8b93a6befc840c774511333cc
 :uri-build-status: https://dev.azure.com/sonarsource-cfamily-examples/windows-msbuild-azure-sq/_build/latest?definitionId=2
-:img-build-status: https://dev.azure.com/sonarsource-cfamily-examples/windows-msbuild-azure-sq/_apis/build/status/sonarsource-cfamily-examples.linux-cmake-azure-sq
+:img-build-status: https://dev.azure.com/sonarsource-cfamily-examples/windows-msbuild-azure-sq/_apis/build/status/sonarsource-cfamily-examples.windows-msbuild-azure-sq
 
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
