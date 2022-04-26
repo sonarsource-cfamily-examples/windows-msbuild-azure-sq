@@ -4,7 +4,7 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   variables:
-    SONARQUBE_HOST_URL: <SONARQUBE_HOST_URL> # Replace <SONARQUBE_HOST_URL> with your SonarQube server URL
+    SONARQUBE_HOST_URL: https://next.sonarqube.com/sonarqube
   steps:
   # Make Build Wrapper available
   - task: SonarQubePrepare@4
