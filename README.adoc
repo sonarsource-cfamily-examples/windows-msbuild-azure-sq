@@ -39,7 +39,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube on Az
 .. Wrap your compilation with the Build Wrapper
 .. Add the `SonarQubeAnalyze` task
 
-You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:azure-pipelines.yml[azure-pipelines.yml] to see it in practice. Please be aware that the SonarQube server URL is not completed in this azure-pipelines.yml example.
+You can take a look at the link:sonar-project.properties[sonar-project.properties] and link:azure-pipelines.yml[azure-pipelines.yml] to see it in practice.
 
 = Documentation
 
