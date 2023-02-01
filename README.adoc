@@ -33,7 +33,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube on Az
 * Choose "Manually provide configuration"
 * Specify the "Project Key" and the "Sources directory root"
 * In "Additional Properties" in the "Advanced" section, add the property `sonar.cfamily.build-wrapper-output` with, as its value, the output directory to which the Build Wrapper should write its results (e.g. `build_wrapper_output_directory`)
-.. Add a task to download the https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-5[Build Wrapper]
+.. Add a task to download the https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-build-wrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
 .. Add the `SonarQubeAnalyze` task
 
@@ -44,7 +44,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
 - https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analysis/languages/cfamily/#header-9[Configuring multithreaded execution]
+- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
 
 = Windows\MSBuild
 
