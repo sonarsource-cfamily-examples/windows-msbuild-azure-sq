@@ -7,7 +7,7 @@ jobs:
     SONARQUBE_HOST_URL: https://next.sonarqube.com/sonarqube
   steps:
   # Make Build Wrapper available
-  - task: SonarQubePrepare@4
+  - task: SonarQubePrepare@5
     inputs:
       SonarQube: 'SonarQube' # Name of the SonarQube service endpoint you created
       scannerMode: 'CLI'
@@ -22,4 +22,6 @@ jobs:
       & "$HOME\.sonar\build-wrapper-win-x86\build-wrapper-win-x86-64.exe" --out-dir build_wrapper_output_directory $path sonar_scanner_example.vcxproj /t:rebuild /nodeReuse:false
     workingDirectory: .
     displayName: Build in build-wrapper
-  - task: SonarQubeAnalyze@4
+  - task: SonarQubeAnalyze@5
+    inputs:
+      jdkversion: 'JAVA_HOME_17_X64'
