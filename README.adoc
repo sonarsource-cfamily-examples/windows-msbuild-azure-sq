@@ -32,7 +32,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube on Az
 * Choose "Use standalone scanner" (`scannerMode: 'CLI'`)
 * Choose "Manually provide configuration"
 * Specify the "Project Key" and the "Sources directory root"
-* In "Additional Properties" in the "Advanced" section, add the property `sonar.cfamily.build-wrapper-output` with, as its value, the output directory to which the Build Wrapper should write its results (e.g. `build_wrapper_output_directory`)
+* In "Additional Properties" in the "Advanced" section, add the property `sonar.cfamily.compile-commands` with, as its value, the `compile_commands.json` file in the output directory to which the Build Wrapper should write its results (e.g. `build_wrapper_output_directory`)
 .. Add a task to download the https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-build-wrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper
 .. Add the `SonarQubeAnalyze` task

@@ -12,7 +12,7 @@ jobs:
       SonarQube: 'SonarQube' # Name of the SonarQube service endpoint you created
       scannerMode: 'CLI'
       configMode: 'file'
-      extraProperties: "sonar.cfamily.build-wrapper-output=build_wrapper_output_directory"
+      extraProperties: "sonar.cfamily.compile-commands=build_wrapper_output_directory/compile_commands.json"
   - pwsh: |
       curl --create-dirs -sSLo $HOME\.sonar\build-wrapper-win-x86.zip ${{variables.SONARQUBE_HOST_URL}}/static/cpp/build-wrapper-win-x86.zip
       unzip -o $HOME\.sonar\build-wrapper-win-x86.zip -d $HOME\.sonar\
