@@ -40,7 +40,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube on Az
 --
 +
 Noting that `bw-output` is the directory passed to build wrapper as `--out-dir`
-.. Add a task to download the https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#using-build-wrapper[Build Wrapper]
+.. Add a task to download the https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/prerequisites/#using-buildwrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper, specifying the same output directory used in "Additional Properties"
 .. Add the `SonarQubeAnalyze` task
 
@@ -50,8 +50,8 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 
 - https://docs.sonarqube.org/latest/analysis/languages/cfamily/[Documentation of the C, C++ and Objective-C plugin and its Build Wrapper]
 - https://docs.sonarqube.org/latest/analysis/azuredevops-integration/[Documentation of using SonarQube with Azure DevOps]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
-- https://docs.sonarqube.org/latest/analyzing-source-code/languages/c-family/#parallel-code-scan[Configuring multithreaded execution]
+- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#analysis-cache[Configuring C, C++ and Objective-C analysis cache]
+- https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/customizing-the-analysis/#parallel-code-scan[Configuring multithreaded execution]
 
 = Windows\MSBuild
 
