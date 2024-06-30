@@ -39,7 +39,7 @@ It is very easy to analyze a C, C++ and Objective-C project with SonarQube on Az
 ** the property `sonar.cfamily.build-wrapper-output`, with value `bw-output`, if you are using SonarQube version 10.5 or earlier, as build-wrapper did not generate a `compile_commands.json` file before SonarQube 10.6
 --
 +
-Noting that `bw-output` is the directory passed to build wrapper as `--out-dir`
+Noting that `bw-output` is the directory passed to build wrapper as `--out-dir` (see below)
 .. Add a task to download the https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/c-family/prerequisites/#using-buildwrapper[Build Wrapper]
 .. Wrap your compilation with the Build Wrapper, specifying the same output directory used in "Additional Properties"
 .. Add the `SonarQubeAnalyze` task
