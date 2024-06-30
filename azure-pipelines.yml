@@ -12,7 +12,10 @@ jobs:
       SonarQube: 'SonarQube' # Name of the SonarQube service endpoint you created
       scannerMode: 'CLI'
       configMode: 'file'
-      extraProperties: "sonar.cfamily.build-wrapper-output=build_wrapper_output_directory"
+      extraProperties:
+        "sonar.cfamily.compile-commands=build_wrapper_output_directory/compile_commands.json"
+        # if you are using using SonarQube 10.5 or earlier, replace "sonar.cfamily.compile-commands=build_wrapper_output_directory/compile_commands.json" 
+        # with "sonar.cfamily.build-wrapper-output=$BUILD_WRAPPER_OUT_DIR", as build-wrapper does not generate a compile_commands.json file before SonarQube 10.6
   - pwsh: |
       curl --create-dirs -sSLo $HOME\.sonar\build-wrapper-win-x86.zip ${{variables.SONARQUBE_HOST_URL}}/static/cpp/build-wrapper-win-x86.zip
       unzip -o $HOME\.sonar\build-wrapper-win-x86.zip -d $HOME\.sonar\
